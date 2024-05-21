@@ -1,0 +1,343 @@
+Last login: Mon May 20 09:53:40 on ttys000
+behr201@J1QXFYW4Q1 ~ % git --version
+git version 2.39.2 (Apple Git-143)
+behr201@J1QXFYW4Q1 ~ % git config --global --list
+fatal: unable to read config file '/Users/behr201/.gitconfig': No such file or directory
+behr201@J1QXFYW4Q1 ~ % git config --global user.name "Bethan Mallabar-Rimmer"
+behr201@J1QXFYW4Q1 ~ % git config --global user.email "b.rimmer@exeter.ac.uk"
+behr201@J1QXFYW4Q1 ~ % git config --global --list                            
+user.name=Bethan Mallabar-Rimmer
+user.email=b.rimmer@exeter.ac.uk
+behr201@J1QXFYW4Q1 ~ % echo "# intermediate-vc-course" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git
+git push -u origin main
+Initialized empty Git repository in /Users/behr201/.git/
+[main (root-commit) c8cf85a] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+Username for 'https://github.com': bethan-mallabar-rimmer
+Password for 'https://bethan-mallabar-rimmer@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git/'
+behr201@J1QXFYW4Q1 ~ % echo "# intermediate-vc-course" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git
+git push -u origin main
+Reinitialized existing Git repository in /Users/behr201/.git/
+[main e997f1c] first commit
+ 1 file changed, 1 insertion(+)
+error: remote origin already exists.
+Username for 'https://github.com': bethan-mallabar-rimmer
+Password for 'https://bethan-mallabar-rimmer@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git/'
+behr201@J1QXFYW4Q1 ~ % echo "# intermediate-vc-course" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git
+git push -u origin main
+Reinitialized existing Git repository in /Users/behr201/.git/
+[main ac52de8] first commit
+ 1 file changed, 1 insertion(+)
+error: remote origin already exists.
+Username for 'https://github.com': bethan-mallabar-rimmer
+Password for 'https://bethan-mallabar-rimmer@github.com': 
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (9/9), 726 bytes | 726.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+behr201@J1QXFYW4Q1 ~ % pwd
+/Users/behr201
+behr201@J1QXFYW4Q1 ~ % ls -a
+.			.local			Library
+..			.npm			Movies
+.CFUserTextEncoding	.nvm			Music
+.DS_Store		.serverauth.94478	Pictures
+.RData			.ssh			Public
+.Rhistory		.thumbnails		README.md
+.Trash			.viminfo		Sites
+.Xauthority		.vscode			Untitled.R
+.cache			.zprofile		Zotero
+.config			.zsh_history		figure2_fit.pdf
+.cups			.zsh_sessions		iCloud Drive (Archive)
+.git			Applications		khawp1-4.gds
+.gitconfig		Desktop			photo-gallery
+.idlerc			Documents		raw_density_plots.pdf
+.ionic			Downloads		rocauc_frame.rds
+.lesshst		Humankind
+behr201@J1QXFYW4Q1 ~ % mkdir Documents/Admin/Courses_Training/intermediate_version_control
+mkdir: Documents/Admin/Courses_Training: No such file or directory
+behr201@J1QXFYW4Q1 ~ % mkdir Documents/Admin/Courses_Training/intermediate_version_control
+behr201@J1QXFYW4Q1 ~ % cp -r .git/ Documents/Admin/Courses_Training/intermediate_version_control/
+behr201@J1QXFYW4Q1 ~ % cp -r README.md  Documents/Admin/Courses_Training/intermediate_version_control/         
+behr201@J1QXFYW4Q1 ~ % cd  Documents/Admin/Courses_Training/intermediate_version_control/  
+behr201@J1QXFYW4Q1 intermediate_version_control % ls -a
+.		HEAD		description	info		refs
+..		README.md	hooks		logs
+COMMIT_EDITMSG	config		index		objects
+behr201@J1QXFYW4Q1 intermediate_version_control % mkdir .git
+behr201@J1QXFYW4Q1 intermediate_version_control % ls -a
+.		COMMIT_EDITMSG	description	info
+..		HEAD		git		logs
+.DS_Store	README.md	hooks		objects
+.git		config		index		refs
+behr201@J1QXFYW4Q1 intermediate_version_control % mv * .git/
+behr201@J1QXFYW4Q1 intermediate_version_control % ls -a
+.		..		.DS_Store	.git
+behr201@J1QXFYW4Q1 intermediate_version_control % mv .git/README.md .
+behr201@J1QXFYW4Q1 intermediate_version_control % ls -a
+.		..		.DS_Store	.git		README.md
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+behr201@J1QXFYW4Q1 intermediate_version_control % open .                
+behr201@J1QXFYW4Q1 intermediate_version_control % code .
+zsh: command not found: code
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+behr201@J1QXFYW4Q1 intermediate_version_control % git add README.md
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+behr201@J1QXFYW4Q1 intermediate_version_control % git add README.md
+behr201@J1QXFYW4Q1 intermediate_version_control % git status       
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+behr201@J1QXFYW4Q1 intermediate_version_control % git commit --message "Remove diplicate intermediate-vc-course and add keyboard smash"
+[main 64a904c] Remove diplicate intermediate-vc-course and add keyboard smash
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+behr201@J1QXFYW4Q1 intermediate_version_control % git log
+commit 64a904cd7d4bc3c1c113fd4c242ca07aab35d134 (HEAD -> main)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:55:46 2024 +0100
+
+    Remove diplicate intermediate-vc-course and add keyboard smash
+
+commit ac52de868ac627cad48ee5e0ab5d0a985508615a (origin/main)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:30:54 2024 +0100
+
+    first commit
+
+commit e997f1cfee5f0b5064154935badcc119acb15f28
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:29:01 2024 +0100
+
+    first commit
+
+commit c8cf85ae0f3cc3bbf8efbdfe6308c7cd31dddac4
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:23:22 2024 +0100
+
+    first commit
+behr201@J1QXFYW4Q1 intermediate_version_control % git tag v1
+behr201@J1QXFYW4Q1 intermediate_version_control % git log
+commit 64a904cd7d4bc3c1c113fd4c242ca07aab35d134 (HEAD -> main, tag: v1)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:55:46 2024 +0100
+
+    Remove diplicate intermediate-vc-course and add keyboard smash
+
+commit ac52de868ac627cad48ee5e0ab5d0a985508615a (origin/main)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:30:54 2024 +0100
+
+    first commit
+
+commit e997f1cfee5f0b5064154935badcc119acb15f28
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:29:01 2024 +0100
+
+    first commit
+
+commit c8cf85ae0f3cc3bbf8efbdfe6308c7cd31dddac4
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:23:22 2024 +0100
+
+    first commit
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+behr201@J1QXFYW4Q1 intermediate_version_control % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (3/3), 336 bytes | 336.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git
+   ac52de8..64a904c  main -> main
+behr201@J1QXFYW4Q1 intermediate_version_control % git push origin v1
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git
+ * [new tag]         v1 -> v1
+behr201@J1QXFYW4Q1 intermediate_version_control % git branch feature
+behr201@J1QXFYW4Q1 intermediate_version_control % git branch
+  feature
+* main
+behr201@J1QXFYW4Q1 intermediate_version_control % git switch feature
+Switched to branch 'feature'
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	story.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+behr201@J1QXFYW4Q1 intermediate_version_control % git add story.md
+behr201@J1QXFYW4Q1 intermediate_version_control % git commit --message "New file story.md"
+[feature 580ad4f] New file story.md
+ 1 file changed, 1 insertion(+)
+ create mode 100644 story.md
+behr201@J1QXFYW4Q1 intermediate_version_control % git log
+commit 580ad4f7148434d2e8f8d76716e348124bef91d5 (HEAD -> feature)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 11:03:48 2024 +0100
+
+    New file story.md
+
+commit 64a904cd7d4bc3c1c113fd4c242ca07aab35d134 (tag: v1, origin/main, main)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:55:46 2024 +0100
+
+    Remove diplicate intermediate-vc-course and add keyboard smash
+
+commit ac52de868ac627cad48ee5e0ab5d0a985508615a
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:30:54 2024 +0100
+
+    first commit
+
+commit e997f1cfee5f0b5064154935badcc119acb15f28
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:29:01 2024 +0100
+
+    first commit
+
+commit c8cf85ae0f3cc3bbf8efbdfe6308c7cd31dddac4
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:23:22 2024 +0100
+
+    first commit
+behr201@J1QXFYW4Q1 intermediate_version_control % git push origin feature
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 303 bytes | 303.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'feature' on GitHub by visiting:
+remote:      https://github.com/bethan-mallabar-rimmer/intermediate-vc-course/pull/new/feature
+remote: 
+To https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git
+ * [new branch]      feature -> feature
+behr201@J1QXFYW4Q1 intermediate_version_control % 
