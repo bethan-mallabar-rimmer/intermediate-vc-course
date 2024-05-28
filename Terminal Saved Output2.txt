@@ -1,0 +1,590 @@
+Last login: Tue May 21 10:13:17 on ttys000
+behr201@J1QXFYW4Q1 ~ % git config -h
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+behr201@J1QXFYW4Q1 ~ % man git -config
+No manual entry for -config
+behr201@J1QXFYW4Q1 ~ % git config --help
+behr201@J1QXFYW4Q1 ~ % git config -h
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+behr201@J1QXFYW4Q1 ~ % cat ~/.gitconfig 
+[user]
+	name = Bethan Mallabar-Rimmer
+	email = b.rimmer@exeter.ac.uk
+behr201@J1QXFYW4Q1 ~ % git config --global --list
+user.name=Bethan Mallabar-Rimmer
+user.email=b.rimmer@exeter.ac.uk
+behr201@J1QXFYW4Q1 ~ % git config --global core.editor nano
+behr201@J1QXFYW4Q1 ~ % git config --global alias st status
+error: key does not contain a section: alias
+behr201@J1QXFYW4Q1 ~ % git config --global alias.st status
+behr201@J1QXFYW4Q1 ~ % git st
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.CFUserTextEncoding
+	.DS_Store
+	.RData
+	.Rhistory
+	.Trash/
+	.Xauthority
+	.cache/
+	.config/
+	.cups/
+	.gitconfig
+	.idlerc/
+	.ionic/
+	.lesshst
+	.local/
+	.npm/
+	.nvm/
+	.serverauth.94478
+	.ssh/
+	.thumbnails/
+	.viminfo
+	.vscode/
+	.zprofile
+	.zsh_history
+	.zsh_sessions/
+	Applications/
+	Desktop/
+	Documents/
+	Downloads/
+	Humankind/
+	Library/
+	Movies/
+	Music/
+	Pictures/
+	Public/
+	Sites/
+	Untitled.R
+	Zotero/
+	figure2_fit.pdf
+	iCloud Drive (Archive)/
+	khawp1-4.gds
+	photo-gallery/
+	raw_density_plots.pdf
+	rocauc_frame.rds
+
+nothing added to commit but untracked files present (use "git add" to track)
+behr201@J1QXFYW4Q1 ~ % git config --global alias.list-config 'config --list --global'
+behr201@J1QXFYW4Q1 ~ % git list-config
+user.name=Bethan Mallabar-Rimmer
+user.email=b.rimmer@exeter.ac.uk
+core.editor=nano
+alias.st=status
+alias.list-config=config --list --global
+behr201@J1QXFYW4Q1 ~ % cd /Users/behr201/Documents/Admin/Courses_Training/intermediate_version_control
+behr201@J1QXFYW4Q1 intermediate_version_control % pwd
+/Users/behr201/Documents/Admin/Courses_Training/intermediate_version_control
+behr201@J1QXFYW4Q1 intermediate_version_control % git st                                                        
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	Terminal Saved Output.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+behr201@J1QXFYW4Q1 intermediate_version_control % git log --oneline
+580ad4f (HEAD -> feature, origin/feature) New file story.md
+64a904c (tag: v1, origin/main, main) Remove diplicate intermediate-vc-course and add keyboard smash
+ac52de8 first commit
+e997f1c first commit
+c8cf85a first commit
+behr201@J1QXFYW4Q1 intermediate_version_control % log --oneline --all --graph                                         
+log: unrecognized option `--oneline'
+usage:
+    log <command>
+
+global options:
+    -?, --help
+    -q, --quiet
+    -v, --verbose
+
+commands:
+    collect         gather system logs into a log archive
+    config          view/change logging system settings
+    erase           delete system logging data
+    show            view/search system logs
+    stream          watch live system logs
+    stats           show system logging statistics
+
+further help:
+    log help <command>
+    log help predicates
+behr201@J1QXFYW4Q1 intermediate_version_control % git log --oneline --all --graph
+* 580ad4f (HEAD -> feature, origin/feature) New file story.md
+* 64a904c (tag: v1, origin/main, main) Remove diplicate intermediate-vc-course and add keyboard smash
+* ac52de8 first commit
+* e997f1c first commit
+* c8cf85a first commit
+behr201@J1QXFYW4Q1 intermediate_version_control % git config --global alias.log-oneline  'log --oneline --all --graph'
+behr201@J1QXFYW4Q1 intermediate_version_control % git list-config
+user.name=Bethan Mallabar-Rimmer
+user.email=b.rimmer@exeter.ac.uk
+core.editor=nano
+alias.st=status
+alias.list-config=config --list --global
+alias.log-oneline=log --oneline --all --graph
+behr201@J1QXFYW4Q1 intermediate_version_control % git log-oneline
+* 580ad4f (HEAD -> feature, origin/feature) New file story.md
+* 64a904c (tag: v1, origin/main, main) Remove diplicate intermediate-vc-course and add keyboard smash
+* ac52de8 first commit
+* e997f1c first commit
+* c8cf85a first commit
+behr201@J1QXFYW4Q1 intermediate_version_control % git diff
+diff --git a/story.md b/story.md
+index 4b91e9b..f3900ae 100644
+--- a/story.md
++++ b/story.md
+@@ -1 +1 @@
+-This is a story
+\ No newline at end of file
++This is a story about
+\ No newline at end of file
+behr201@J1QXFYW4Q1 intermediate_version_control % git diff 64a904c 580ad4f
+diff --git a/story.md b/story.md
+new file mode 100644
+index 0000000..4b91e9b
+--- /dev/null
++++ b/story.md
+@@ -0,0 +1 @@
++This is a story
+\ No newline at end of file
+behr201@J1QXFYW4Q1 intermediate_version_control % git diff e997f1c c8cf85a
+diff --git a/README.md b/README.md
+index b904724..d34749f 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1 @@
+ # intermediate-vc-course
+-# intermediate-vc-course
+behr201@J1QXFYW4Q1 intermediate_version_control % git log --oneline
+580ad4f (HEAD -> feature, origin/feature) New file story.md
+64a904c (tag: v1, origin/main, main) Remove diplicate intermediate-vc-course and add keyboard smash
+ac52de8 first commit
+e997f1c first commit
+c8cf85a first commit
+behr201@J1QXFYW4Q1 intermediate_version_control % git log --help
+behr201@J1QXFYW4Q1 intermediate_version_control % git log -n2
+commit 580ad4f7148434d2e8f8d76716e348124bef91d5 (HEAD -> feature, origin/feature)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 11:03:48 2024 +0100
+
+    New file story.md
+
+commit 64a904cd7d4bc3c1c113fd4c242ca07aab35d134 (tag: v1, origin/main, main)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:55:46 2024 +0100
+
+    Remove diplicate intermediate-vc-course and add keyboard smash
+behr201@J1QXFYW4Q1 intermediate_version_control % git log --oneline
+580ad4f (HEAD -> feature, origin/feature) New file story.md
+64a904c (tag: v1, origin/main, main) Remove diplicate intermediate-vc-course and add keyboard smash
+ac52de8 first commit
+e997f1c first commit
+c8cf85a first commit
+behr201@J1QXFYW4Q1 intermediate_version_control % git log --patch
+commit 580ad4f7148434d2e8f8d76716e348124bef91d5 (HEAD -> feature, origin/feature)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 11:03:48 2024 +0100
+
+    New file story.md
+
+diff --git a/story.md b/story.md
+new file mode 100644
+index 0000000..4b91e9b
+--- /dev/null
++++ b/story.md
+@@ -0,0 +1 @@
++This is a story
+\ No newline at end of file
+
+commit 64a904cd7d4bc3c1c113fd4c242ca07aab35d134 (tag: v1, origin/main, main)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:55:46 2024 +0100
+
+    Remove diplicate intermediate-vc-course and add keyboard smash
+
+diff --git a/README.md b/README.md
+index 0619520..e09fbd2 100644
+behr201@J1QXFYW4Q1 intermediate_version_control % git branch
+* feature
+  main
+behr201@J1QXFYW4Q1 intermediate_version_control % git st
+On branch feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   story.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	Terminal Saved Output.txt
+	data/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+behr201@J1QXFYW4Q1 intermediate_version_control % git add data/*.txt
+behr201@J1QXFYW4Q1 intermediate_version_control % git st
+On branch feature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   data/f1.txt
+	new file:   data/f2.txt
+	new file:   data/f3.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   story.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	Terminal Saved Output.txt
+	data/datadata.csv
+
+behr201@J1QXFYW4Q1 intermediate_version_control % git add --all
+behr201@J1QXFYW4Q1 intermediate_version_control % git st
+On branch feature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Terminal Saved Output.txt
+	new file:   data/datadata.csv
+	new file:   data/f1.txt
+	new file:   data/f2.txt
+	new file:   data/f3.txt
+	modified:   story.md
+
+behr201@J1QXFYW4Q1 intermediate_version_control % git st
+On branch feature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Terminal Saved Output.txt
+	new file:   data/datadata.csv
+	new file:   data/f1.txt
+	new file:   data/f2.txt
+	new file:   data/f3.txt
+	modified:   story.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	data/dont-track.pdf
+
+behr201@J1QXFYW4Q1 intermediate_version_control % pwd             
+/Users/behr201/Documents/Admin/Courses_Training/intermediate_version_control
+behr201@J1QXFYW4Q1 intermediate_version_control % touch .gitignore  
+behr201@J1QXFYW4Q1 intermediate_version_control % git st
+On branch feature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Terminal Saved Output.txt
+	new file:   data/datadata.csv
+	new file:   data/f1.txt
+	new file:   data/f2.txt
+	new file:   data/f3.txt
+	modified:   story.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+
+behr201@J1QXFYW4Q1 intermediate_version_control % git add .gitignore
+behr201@J1QXFYW4Q1 intermediate_version_control % git st
+On branch feature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   .gitignore
+	new file:   Terminal Saved Output.txt
+	new file:   data/datadata.csv
+	new file:   data/f1.txt
+	new file:   data/f2.txt
+	new file:   data/f3.txt
+	modified:   story.md
+
+behr201@J1QXFYW4Q1 intermediate_version_control % ls -a
+.				.git				Terminal Saved Output.txt
+..				.gitignore			data
+.DS_Store			README.md			story.md
+behr201@J1QXFYW4Q1 intermediate_version_control % ls .git
+COMMIT_EDITMSG	config		git		index		logs		refs
+HEAD		description	hooks		info		objects
+behr201@J1QXFYW4Q1 intermediate_version_control % ls .git/info
+exclude
+behr201@J1QXFYW4Q1 intermediate_version_control % nano .git/info/exclude
+behr201@J1QXFYW4Q1 intermediate_version_control % git diff
+behr201@J1QXFYW4Q1 intermediate_version_control % git commit
+Aborting commit due to empty commit message.
+behr201@J1QXFYW4Q1 intermediate_version_control % git commit
+[feature 6f04b7b] 	new file:   .DS_Store 	new file:   .gitignore 	new file:   Terminal Saved Output.txt 	new file:   data/datadata.csv 	new file:   data/f1.txt 	new file:   data/f2.txt 	new file:   data/f3.txt 	modified:   story.md
+ 8 files changed, 355 insertions(+), 1 deletion(-)
+ create mode 100644 .DS_Store
+ create mode 100644 .gitignore
+ create mode 100644 Terminal Saved Output.txt
+ create mode 100644 data/datadata.csv
+ create mode 100644 data/f1.txt
+ create mode 100644 data/f2.txt
+ create mode 100644 data/f3.txt
+behr201@J1QXFYW4Q1 intermediate_version_control % git log   
+commit 6f04b7b6fbc3ac0614b631be66335aa6b0a6fbb8 (HEAD -> feature)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 12:13:02 2024 +0100
+
+            new file:   .DS_Store
+            new file:   .gitignore
+            new file:   Terminal Saved Output.txt
+            new file:   data/datadata.csv
+            new file:   data/f1.txt
+            new file:   data/f2.txt
+            new file:   data/f3.txt
+            modified:   story.md
+
+commit 580ad4f7148434d2e8f8d76716e348124bef91d5 (origin/feature)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 11:03:48 2024 +0100
+
+    New file story.md
+
+commit 64a904cd7d4bc3c1c113fd4c242ca07aab35d134 (tag: v1, origin/main, main)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:55:46 2024 +0100
+
+behr201@J1QXFYW4Q1 intermediate_version_control % git checkout v1
+Note: switching to 'v1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 64a904c Remove diplicate intermediate-vc-course and add keyboard smash
+behr201@J1QXFYW4Q1 intermediate_version_control % ls
+README.md	data
+behr201@J1QXFYW4Q1 intermediate_version_control % git log --all
+commit 6f04b7b6fbc3ac0614b631be66335aa6b0a6fbb8 (feature)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 12:13:02 2024 +0100
+
+            new file:   .DS_Store
+            new file:   .gitignore
+            new file:   Terminal Saved Output.txt
+            new file:   data/datadata.csv
+            new file:   data/f1.txt
+            new file:   data/f2.txt
+            new file:   data/f3.txt
+            modified:   story.md
+
+commit 580ad4f7148434d2e8f8d76716e348124bef91d5 (origin/feature)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 11:03:48 2024 +0100
+
+    New file story.md
+
+commit 64a904cd7d4bc3c1c113fd4c242ca07aab35d134 (HEAD, tag: v1, origin/main, main)
+Author: Bethan Mallabar-Rimmer <b.rimmer@exeter.ac.uk>
+Date:   Tue May 21 10:55:46 2024 +0100
+
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+HEAD detached at v1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	data/
+
+nothing added to commit but untracked files present (use "git add" to track)
+behr201@J1QXFYW4Q1 intermediate_version_control % git add data/
+behr201@J1QXFYW4Q1 intermediate_version_control % git status   
+HEAD detached at v1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   data/dont-track.pdf
+
+behr201@J1QXFYW4Q1 intermediate_version_control % git commit
+Aborting commit due to empty commit message.
+behr201@J1QXFYW4Q1 intermediate_version_control % git commit
+[detached HEAD 325b5fb]  idk
+ 1 file changed, 1 insertion(+)
+ create mode 100644 data/dont-track.pdf
+behr201@J1QXFYW4Q1 intermediate_version_control % git statys
+git: 'statys' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+HEAD detached from v1
+nothing to commit, working tree clean
+behr201@J1QXFYW4Q1 intermediate_version_control % git checkout feature
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  325b5fb  idk
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 325b5fb
+
+Switched to branch 'feature'
+behr201@J1QXFYW4Q1 intermediate_version_control % git branch feature2 325b5fb         
+behr201@J1QXFYW4Q1 intermediate_version_control % git branch
+* feature
+  feature2
+  main
+behr201@J1QXFYW4Q1 intermediate_version_control % git status
+On branch feature
+nothing to commit, working tree clean
+behr201@J1QXFYW4Q1 intermediate_version_control % git commit
+On branch feature
+nothing to commit, working tree clean
+behr201@J1QXFYW4Q1 intermediate_version_control % git push origin feature
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (11/11), 3.60 KiB | 3.60 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git
+   580ad4f..6f04b7b  feature -> feature
+behr201@J1QXFYW4Q1 intermediate_version_control % git push origin v1     
+Everything up-to-date
+behr201@J1QXFYW4Q1 intermediate_version_control % git tag v2
+behr201@J1QXFYW4Q1 intermediate_version_control % git push origin v2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bethan-mallabar-rimmer/intermediate-vc-course.git
+ * [new tag]         v2 -> v2
+behr201@J1QXFYW4Q1 intermediate_version_control % git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+behr201@J1QXFYW4Q1 intermediate_version_control % git merge feature-branch
+merge: feature-branch - not something we can merge
+behr201@J1QXFYW4Q1 intermediate_version_control % git merge feature       
+Updating 64a904c..6f04b7b
+Fast-forward
+ .DS_Store                 | Bin 0 -> 6148 bytes
+ .gitignore                |   1 +
+ Terminal Saved Output.txt | 343 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ data/datadata.csv         |   1 +
+ data/f1.txt               |   1 +
+ data/f2.txt               |   1 +
+ data/f3.txt               |   7 ++
+ story.md                  |   1 +
+ 8 files changed, 355 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 .gitignore
+ create mode 100644 Terminal Saved Output.txt
+ create mode 100644 data/datadata.csv
+ create mode 100644 data/f1.txt
+ create mode 100644 data/f2.txt
+ create mode 100644 data/f3.txt
+ create mode 100644 story.md
+behr201@J1QXFYW4Q1 intermediate_version_control % git log-oneline                                                     
+* 325b5fb (feature2)  idk
+| * 6f04b7b (HEAD -> main, tag: v2, origin/feature, feature)    new file:   .DS_Store   new file:   .gitignore  new file:   Terminal Saved Output.txt   new file:   data/datadata.csv   new file:   data/f1.txt         new file:   data/f2.txt         new file:   data/f3.txt         modified:   story.md
+| * 580ad4f New file story.md
+|/  
+* 64a904c (tag: v1, origin/main) Remove diplicate intermediate-vc-course and add keyboard smash
+* ac52de8 first commit
+* e997f1c first commit
+* c8cf85a first commit
+behr201@J1QXFYW4Q1 intermediate_version_control % 
